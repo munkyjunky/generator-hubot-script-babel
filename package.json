@@ -1,12 +1,11 @@
 {
   "name": "generator-hubot-script-babel",
   "version": "0.0.1",
-  "description": "A generator for hubot scripts using babel, es2015, and mocha",
+  "description": "A generator for hubot scripts that use babel and mocha",
   "homepage": "",
   "author": {
     "name": "Simon Wears",
-    "email": "munkyjunky@gmail.com",
-    "url": ""
+    "email": "munkyjunky@gmail.com"
   },
   "files": [
     "generators"
@@ -30,7 +29,7 @@
     "gulp-plumber": "^1.0.0",
     "gulp-nsp": "^2.1.0"
   },
-  "repository": "/generator-hubot-script-babel",
+  "repository": "https://github.com/munkyjunky/generator-hubot-script-babel.git",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
