@@ -13,6 +13,7 @@ module.exports = {
 
     module: {
         loaders: [
+            { test: /\.coffee$/, loader: "coffee-loader" },
             {
                 test: /\.js/,
                 loader: 'babel',
