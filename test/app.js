@@ -6,14 +6,19 @@ var helpers = require('yeoman-generator').test;
 describe('generator-hubot-script-babel:app', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
-      .withOptions({someOption: true})
-      .withPrompts({someAnswer: true})
+      .withPrompts({
+        name: 'script-test',
+        description: 'script description'
+      })
       .on('end', done);
   });
 
   it('creates files', function () {
     assert.file([
-      'dummyfile.txt'
+      'package.json',
+      'webpack.config.js',
+      'test/index.js',
+      'src/index.js'
     ]);
   });
 });
