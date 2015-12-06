@@ -16,9 +16,9 @@ Then generate your new project:
 yo hubot-script-babel
 ```
 
-## Getting To Know Yeoman
+## Usage
+This is a generator for hubot scripts which are written in ES6 JavaScript, and packaged using webpack. It also provides a basic testing setup for your script, using the mocha, chai, and hubot mock adapter. 
 
-Yeoman has a heart of gold. He&#39;s a person with feelings and opinions, but he&#39;s very easy to work with. If you think he&#39;s too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
 
 ## License
 
@@ -27,7 +27,7 @@ MIT © [Simon Wears]()
 
 [npm-image]: https://badge.fury.io/js/generator-hubot-script-babel.svg
 [npm-url]: https://npmjs.org/package/generator-hubot-script-babel
-[travis-image]: https://travis-ci.org//generator-hubot-script-babel.svg?branch=master
-[travis-url]: https://travis-ci.org//generator-hubot-script-babel
-[daviddm-image]: https://david-dm.org//generator-hubot-script-babel.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org//generator-hubot-script-babel
+[travis-image]: https://travis-ci.org/munkyjunky/generator-hubot-script-babel.svg?branch=master
+[travis-url]: https://travis-ci.org/munkyjunky/generator-hubot-script-babel
+[daviddm-image]: https://david-dm.org/munkyjunky/generator-hubot-script-babel.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/munkyjunky/generator-hubot-script-babel
