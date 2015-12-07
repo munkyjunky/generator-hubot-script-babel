@@ -2,27 +2,27 @@
 
 module.exports = {
 
-    entry: './src/index.js',
+	entry: './src/index.js',
 
-    output: {
-        path: 'dist',
-        filename: 'index.js'
-    },
+	output: {
+		path: 'dist',
+		filename: 'index.js'
+	},
 
-    target: 'node',
+	target: 'node',
 
-    module: {
-        loaders: [
-            { test: /\.coffee$/, loader: 'coffee-loader' },
-            {
-                test: /\.js/,
-                loader: 'babel',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015']
-                }
-            }
-        ]
-    }
+	module: {
+		loaders: [
+			{test: /\.coffee$/, loader: 'coffee-loader'},
+			{
+				test: /\.js/,
+				loader: 'babel',
+				exclude: /node_modules/,
+				query: {
+					presets: ['es2015']
+				}
+			}
+		]
+	}
 
 };
