@@ -4,7 +4,7 @@ module.exports = {
 
     entry: './src/index.js',
 
-    output:  {
+    output: {
         path: 'dist',
         filename: 'index.js'
     },
@@ -13,7 +13,7 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.coffee$/, loader: "coffee-loader" },
+            { test: /\.coffee$/, loader: 'coffee-loader' },
             {
                 test: /\.js/,
                 loader: 'babel',
