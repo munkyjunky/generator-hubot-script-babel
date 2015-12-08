@@ -18,7 +18,9 @@ describe('generator-hubot-script-babel:app', function() {
 			'package.json',
 			'webpack.config.js',
 			'test/index.js',
-			'src/index.js'
+			'src/index.js',
+			'.gitignore',
+			'.travis.yml'
 		]);
 	});
 });

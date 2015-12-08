@@ -24,6 +24,8 @@ module.exports = yeoman.generators.Base.extend({
 
 	writing: function() {
 		this.template('**/*', '', this.props);
+		this.copy('.gitignore', '');
+		this.copy('.travis.yml', '');
 	},
 
 	install: function() {
