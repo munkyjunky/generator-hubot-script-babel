@@ -1,6 +1,6 @@
 {
   "name": "generator-hubot-script-babel",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A generator for hubot scripts that use babel and mocha",
   "homepage": "",
   "author": {
