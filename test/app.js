@@ -20,6 +20,7 @@ describe('generator-hubot-script-babel:app', function() {
 			'test/index.js',
 			'src/index.js',
 			'.gitignore',
+			'.npmignore',
 			'.travis.yml'
 		]);
 	});
