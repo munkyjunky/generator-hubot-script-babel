@@ -3,6 +3,15 @@
   "version": "0.0.0",
   "description": "<%= description %>",
   "main": "dist/index.js",
+  "license": "<%= license %>",
+  "author": {
+	"name": "<%= author_name %>",
+	"email": "<%= author_email %>"
+  },
+  "repository": "https://github.com/<%= author_username %>/<%= name %>.git",
+  "keywords": [
+	  "hubot-script"
+  ]	,
   "scripts": {
     "prepublish": "webpack",
     "test": "node_modules/.bin/mocha --compilers js:babel-core/register,coffee:coffee-script/register"

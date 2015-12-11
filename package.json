@@ -28,6 +28,7 @@
     "gulp-mocha": "^2.0.0",
     "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
+    "object-assign": "^4.0.1",
     "yeoman-assert": "^2.0.0"
   },
   "repository": "https://github.com/munkyjunky/generator-hubot-script-babel.git",
