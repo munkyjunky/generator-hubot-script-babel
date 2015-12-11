@@ -1,6 +1,14 @@
 language: node_js
 node_js:
-  - v5
-  - v4
-  - '0.12'
-  - '0.10'
+- v5
+- v4
+- '0.12'
+- '0.10'
+deploy:
+  provider: npm
+  email: munkyjunky@gmail.com
+  api_key:
+    secure: AXQkGj+qeSV+dSg9dyzmVMQPug1C0bFz6MDQOtgfIwOnJRUh0H7z06xJGVpJcOWP0IkrquTN95+d+xKDwwAGez4NJffe42bETEE/t27RVEv4VyBgjyzVa2k+gehed6tpJ0mNabWxIpW/RALcSCiDgN0B6EZqsla9WmStIYTz8n5J4vwGenDaHb7Dtm9a6X7yxsWH7D8Lf5NiRt69Lm/mGoinqd6FDgHuP9nOYNI/1HUoLjmAtYAfrsIpL3wIEkMZj8wberSZ4RukHaFZNISmhKziTT1/hv9Gu078kObPSid3b03UCHDae9BEJ80ZRZRCZVnbGXyUBknei+uO3V7C+BK6GmWkAO1lt47JIRPH9LKxe1F67H+pOoDN0rIRbu3a1cEcPOP2mtv6ILxBW6jNr6ovlFfZ5+HTrv8QIiIagFMPlQb/eIYc2JmHaWmCkzYYPP+3dzFA8Hr1fm3JY3QHAshSkqG2glejsp9DMGQ6b4MnzqiKsasGa0VBUtMXMOpbuEQ45t08byP5VxuW2Pjl78ibLS7PIEN1hJbNibgEY3UfMZfd3kTkjgHEs2/Jr74S+5r+2OBOlmWRw7hg+/h7zbDmKlu7iAmQvEjfELNYGuSToKRXtP3PVRbKi8pUTZLO+K9v/Xd/TYh2xuAl6NPMu1WuV2ObN8lGXgk/25sKr7I=
+  on:
+    tags: true
+    repo: munkyjunky/generator-hubot-script-babel
