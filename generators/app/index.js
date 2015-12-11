@@ -38,10 +38,19 @@ module.exports = yeoman.generators.Base.extend({
 			repository: 'https://github.com/' + user.github.username() + '/' + this.props.name
 		});
 
-		this.template('**/*', '', data);
-		this.copy('.gitignore', '');
-		this.copy('.npmignore', '');
-		this.copy('.travis.yml', '');
+		this.template('package.json', 'package.json', data);
+
+		this.copy('.gitignore', '.gitignore');
+		this.copy('.npmignore', '.npmignore');
+		this.copy('.travis.yml', '.travis.yml');
+		this.copy('webpack.config.js', 'webpack.config.js');
+
+		this.copy('src/index.js', 'src/index.js');
+		this.copy('test/index.js', 'test/index.js');
+
+		if (this.props.license === 'MIT') {
+			this.copy('license/MIT.txt', 'LICENSE');
+		}
 	},
 
 	install: function() {
