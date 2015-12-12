@@ -48,9 +48,11 @@ module.exports = yeoman.generators.Base.extend({
 		this.copy('src/index.js', 'src/index.js');
 		this.copy('test/index.js', 'test/index.js');
 
-		if (this.props.license === 'MIT') {
-			this.copy('license/MIT.txt', 'LICENSE');
-		}
+		try {
+			// Try copy the file if it exists, else catch the error silently
+			this.copy('license/' + this.props.license + '.txt', 'LICENSE');
+		} catch (e){ }
+
 	},
 
 	install: function() {

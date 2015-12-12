@@ -8,7 +8,8 @@ describe('generator-hubot-script-babel:app', function() {
 		helpers.run(path.join(__dirname, '../generators/app'))
 			.withPrompts({
 				name: 'script-test',
-				description: 'script description'
+				description: 'script description',
+				license: 'MIT'
 			})
 			.on('end', done);
 	});
@@ -21,7 +22,8 @@ describe('generator-hubot-script-babel:app', function() {
 			'src/index.js',
 			'.gitignore',
 			'.npmignore',
-			'.travis.yml'
+			'.travis.yml',
+			'LICENSE'
 		]);
 	});
 });
