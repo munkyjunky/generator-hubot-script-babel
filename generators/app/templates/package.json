@@ -5,10 +5,10 @@
   "main": "dist/index.js",
   "license": "<%= license %>",
   "author": {
-	"name": "<%= author_name %>",
-	"email": "<%= author_email %>"
+	"name": "<%= authorName %>",
+	"email": "<%= authorEmail %>"
   },
-  "repository": "https://github.com/<%= author_username %>/<%= name %>.git",
+  "repository": "https://github.com/<%= authorUsername %>/<%= name %>.git",
   "keywords": [
 	  "hubot-script"
   ]	,

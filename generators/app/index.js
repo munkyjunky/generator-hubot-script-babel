@@ -18,7 +18,7 @@ module.exports = yeoman.generators.Base.extend({
 			message: 'description'
 		}, {
 			type: 'text',
-			'name': 'license',
+			name: 'license',
 			message: 'licence',
 			'default': 'MIT'
 		}];
@@ -31,28 +31,39 @@ module.exports = yeoman.generators.Base.extend({
 
 	writing: function() {
 
-		var data = assign({}, this.props, {
-			author_name: user.git.name(),
-			author_email: user.git.email(),
-			author_username: user.github.username(),
-			repository: 'https://github.com/' + user.github.username() + '/' + this.props.name
-		});
+		var done = this.async();
 
-		this.template('package.json', 'package.json', data);
+		var ghUsername;
 
-		this.copy('.gitignore', '.gitignore');
-		this.copy('.npmignore', '.npmignore');
-		this.copy('.travis.yml', '.travis.yml');
-		this.copy('webpack.config.js', 'webpack.config.js');
+		user.github.username(function() {
 
-		this.copy('src/index.js', 'src/index.js');
-		this.copy('test/index.js', 'test/index.js');
+			var data = assign({}, this.props, {
+				authorName: user.git.name(),
+				authorEmail: user.git.email(),
+				authorUsername: ghUsername,
+				repository: 'https://github.com/' + ghUsername + '/' + this.props.name
+			});
 
-		try {
-			// Try copy the file if it exists, else catch the error silently
-			this.copy('license/' + this.props.license + '.txt', 'LICENSE');
-		} catch (e){ }
+			this.template('package.json', 'package.json', data);
 
+			this.copy('.gitignore', '.gitignore');
+			this.copy('.npmignore', '.npmignore');
+			this.copy('.travis.yml', '.travis.yml');
+			this.copy('webpack.config.js', 'webpack.config.js');
+
+			this.copy('src/index.js', 'src/index.js');
+			this.copy('test/index.js', 'test/index.js');
+
+			try {
+				// Try copy the file if it exists, else catch the error silently
+				this.copy('license/' + this.props.license + '.txt', 'LICENSE');
+			} catch (e) {
+				console.log('NO licence file found for', this.props.license, 'license!');
+			}
+
+			done();
+
+		}.bind(this));
 	},
 
 	install: function() {
