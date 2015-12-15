@@ -26,6 +26,7 @@ describe('generator-hubot-script-babel:app', function() {
 			'.gitignore',
 			'.npmignore',
 			'.travis.yml',
+			'.eslintrc',
 			'LICENSE'
 		]);
 	});
