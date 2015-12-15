@@ -32,38 +32,51 @@ module.exports = yeoman.generators.Base.extend({
 	writing: function() {
 
 		var done = this.async();
+		var self = this;
 
-		var ghUsername;
+		var getUsername = function() {
+			return new Promise(function(resolve) {
+				if (self.options.githubUsername) {
+					resolve(self.options.githubUsername);
+				} else {
+					user.github.username(function(err, username) {
+						resolve(username);
+					});
+				}
+			});
+		};
 
-		user.github.username(function() {
+		getUsername()
+			.then(function(username) {
 
-			var data = assign({}, this.props, {
-				authorName: user.git.name(),
-				authorEmail: user.git.email(),
-				authorUsername: ghUsername,
-				repository: 'https://github.com/' + ghUsername + '/' + this.props.name
+				var data = assign({}, self.props, {
+					authorName: user.git.name(),
+					authorEmail: user.git.email(),
+					authorUsername: username,
+					repository: 'https://github.com/' + username + '/' + self.props.name
+				});
+
+				self.template('package.json', 'package.json', data);
+
+				self.copy('.gitignore', '.gitignore');
+				self.copy('.npmignore', '.npmignore');
+				self.copy('.travis.yml', '.travis.yml');
+				self.copy('webpack.config.js', 'webpack.config.js');
+
+				self.copy('src/index.js', 'src/index.js');
+				self.copy('test/index.js', 'test/index.js');
+
+				try {
+					// Try copy the file if it exists, else catch the error silently
+					self.copy('license/' + self.props.license + '.txt', 'LICENSE');
+				} catch (e) {
+					console.log('NO licence file found for', self.props.license, 'license!');
+				}
+
+				done();
+
 			});
 
-			this.template('package.json', 'package.json', data);
-
-			this.copy('.gitignore', '.gitignore');
-			this.copy('.npmignore', '.npmignore');
-			this.copy('.travis.yml', '.travis.yml');
-			this.copy('webpack.config.js', 'webpack.config.js');
-
-			this.copy('src/index.js', 'src/index.js');
-			this.copy('test/index.js', 'test/index.js');
-
-			try {
-				// Try copy the file if it exists, else catch the error silently
-				this.copy('license/' + this.props.license + '.txt', 'LICENSE');
-			} catch (e) {
-				console.log('NO licence file found for', this.props.license, 'license!');
-			}
-
-			done();
-
-		}.bind(this));
 	},
 
 	install: function() {

@@ -11,6 +11,9 @@ describe('generator-hubot-script-babel:app', function() {
 				description: 'script description',
 				license: 'MIT'
 			})
+			.withOptions({
+				githubUsername: 'test-github-user'
+			})
 			.on('end', done);
 	});
 
