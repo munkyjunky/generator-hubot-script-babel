@@ -19,10 +19,23 @@ yo hubot-script-babel
 ## Usage
 This is a generator for hubot scripts which are written in ES6 JavaScript, and packaged using webpack. It also provides a basic testing setup for your script, using the mocha, chai, and hubot mock adapter. 
 
+```bash
+npm test # run tests
+npm publish # publish your script, which will automatically run webpack
+npm run build # run webpack to test your code locally
+```
+
+When using `npm publish` the included npm prepublish script and .npmignore will webpack your ES6 JavaScript, and exclude any build files from the published package.
+
+## Roadmap
+- Stub a unit test for testing HTTP requests to hubot (such as webhooks)
+- Add code coverage reporting for tests
+- Add README
+
 
 ## License
 
-MIT © [Simon Wears]()
+MIT © [Simon Wears](https://github.com/munkyjunky)
 
 
 [npm-image]: https://badge.fury.io/js/generator-hubot-script-babel.svg

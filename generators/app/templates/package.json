@@ -13,6 +13,7 @@
 	  "hubot-script"
   ]	,
   "scripts": {
+  	"build": "webpack --progress --colors",
     "prepublish": "webpack",
     "test": "node_modules/.bin/mocha --compilers js:babel-core/register,coffee:coffee-script/register"
   },
