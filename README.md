@@ -31,7 +31,6 @@ When using `npm publish` the included npm prepublish script and .npmignore will 
 ## Roadmap
 - Stub a unit test for testing HTTP requests to hubot (such as webhooks)
 - Add code coverage reporting for tests
-- Add README
 
 
 ## License
