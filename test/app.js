@@ -27,7 +27,8 @@ describe('generator-hubot-script-babel:app', function() {
 			'.npmignore',
 			'.travis.yml',
 			'.eslintrc',
-			'LICENSE'
+			'LICENSE',
+			'README.md'
 		]);
 	});
 });

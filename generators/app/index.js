@@ -57,6 +57,7 @@ module.exports = yeoman.generators.Base.extend({
 				});
 
 				self.template('package.json', 'package.json', data);
+				self.template('README.md', 'README.md', data);
 
 				self.copy('.gitignore', '.gitignore');
 				self.copy('.npmignore', '.npmignore');
