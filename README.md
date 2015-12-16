@@ -1,4 +1,5 @@
-# generator-hubot-script-babel [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-hubot-script-babel 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A generator for hubot scripts using babel, es2015, and mocha
 
 ## Installation
