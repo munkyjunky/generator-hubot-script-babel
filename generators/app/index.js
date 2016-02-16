@@ -61,6 +61,7 @@ module.exports = yeoman.generators.Base.extend({
 
 				self.copy('git-ignore', '.gitignore');
 				self.copy('npm-ignore', '.npmignore');
+				self.copy('.babelrc', '.babelrc');
 				self.copy('.travis.yml', '.travis.yml');
 				self.copy('.eslintrc', '.eslintrc');
 				self.copy('webpack.config.js', 'webpack.config.js');
