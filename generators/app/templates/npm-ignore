@@ -5,3 +5,4 @@ test
 .travis.yml
 webpack.config.js
 .gitignore
+coverage
