@@ -28,10 +28,6 @@ npm run build # run webpack to test your code locally
 
 When using `npm publish` the included npm prepublish script and .npmignore will webpack your ES6 JavaScript, and exclude any build files from the published package.
 
-## Roadmap
-- Stub a unit test for testing HTTP requests to hubot (such as webhooks)
-- Add code coverage reporting for tests
-
 
 ## License
 
