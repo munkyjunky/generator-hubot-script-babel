@@ -1,5 +1,5 @@
 # generator-hubot-script-babel 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url][![Coverage Status][coveralls-image]][coveralls-url]
 > A generator for hubot scripts using babel, es2015, and mocha
 
 ## Installation
@@ -44,3 +44,5 @@ MIT © [Simon Wears](https://github.com/munkyjunky)
 [travis-url]: https://travis-ci.org/munkyjunky/generator-hubot-script-babel
 [daviddm-image]: https://david-dm.org/munkyjunky/generator-hubot-script-babel.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/munkyjunky/generator-hubot-script-babel
+[coveralls-image]: https://coveralls.io/repos/github/munkyjunky/generator-hubot-script-babel/badge.svg?branch=feature/code-coverage
+[coveralls-url]:https://coveralls.io/github/munkyjunky/generator-hubot-script-babel?branch=feature/code-coverage
