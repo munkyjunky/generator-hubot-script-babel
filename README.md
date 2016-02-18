@@ -40,5 +40,5 @@ MIT © [Simon Wears](https://github.com/munkyjunky)
 [travis-url]: https://travis-ci.org/munkyjunky/generator-hubot-script-babel
 [daviddm-image]: https://david-dm.org/munkyjunky/generator-hubot-script-babel.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/munkyjunky/generator-hubot-script-babel
-[coveralls-image]: https://coveralls.io/repos/github/munkyjunky/generator-hubot-script-babel/badge.svg?branch=feature/code-coverage
-[coveralls-url]:https://coveralls.io/github/munkyjunky/generator-hubot-script-babel?branch=feature/code-coverage
+[coveralls-image]: https://coveralls.io/repos/github/munkyjunky/generator-hubot-script-babel/badge.svg?branch=master
+[coveralls-url]:https://coveralls.io/github/munkyjunky/generator-hubot-script-babel?branch=master
