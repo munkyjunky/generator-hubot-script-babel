@@ -1,5 +1,5 @@
 # generator-hubot-script-babel 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url]
 > A generator for hubot scripts using babel, es2015, and mocha
 
 ## Installation
@@ -28,10 +28,6 @@ npm run build # run webpack to test your code locally
 
 When using `npm publish` the included npm prepublish script and .npmignore will webpack your ES6 JavaScript, and exclude any build files from the published package.
 
-## Roadmap
-- Stub a unit test for testing HTTP requests to hubot (such as webhooks)
-- Add code coverage reporting for tests
-
 
 ## License
 
@@ -44,3 +40,5 @@ MIT © [Simon Wears](https://github.com/munkyjunky)
 [travis-url]: https://travis-ci.org/munkyjunky/generator-hubot-script-babel
 [daviddm-image]: https://david-dm.org/munkyjunky/generator-hubot-script-babel.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/munkyjunky/generator-hubot-script-babel
+[coveralls-image]: https://coveralls.io/repos/github/munkyjunky/generator-hubot-script-babel/badge.svg?branch=feature/code-coverage
+[coveralls-url]:https://coveralls.io/github/munkyjunky/generator-hubot-script-babel?branch=feature/code-coverage

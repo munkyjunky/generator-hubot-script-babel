@@ -22,20 +22,21 @@
     "object-assign": "^4.0.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.6",
     "eslint-config-degree53-core": "^1.0.6",
     "gulp": "^3.6.0",
     "gulp-eslint": "^1.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-istanbul": "^0.9.0",
-    "gulp-mocha": "^2.0.0",
     "gulp-nsp": "^2.1.0",
-    "gulp-plumber": "^1.0.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
     "yeoman-assert": "^2.0.0"
   },
   "repository": "https://github.com/munkyjunky/generator-hubot-script-babel.git",
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "istanbul cover --report lcovonly ./node_modules/mocha/bin/_mocha -- -R spec",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "license": "MIT"
 }

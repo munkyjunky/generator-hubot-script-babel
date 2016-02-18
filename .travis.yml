@@ -3,6 +3,10 @@ node_js:
 - v5
 - v4
 - '0.12'
+script:
+  - npm test
+after_success:
+  - npm run coverage
 deploy:
   provider: npm
   email: munkyjunky@gmail.com
