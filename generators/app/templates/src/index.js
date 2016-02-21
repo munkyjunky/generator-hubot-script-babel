@@ -2,8 +2,8 @@
 
 module.exports = (robot) => {
 
-    robot.hear(/hello/i, (res)=> {
-        res.send('it\'s working!');
-    });
+	robot.hear(/badger/i, (res)=> {
+		res.send('Badgers? BADGERS? WE DON\'T NEED NO STINKIN BADGERS!');
+	});
 
 };

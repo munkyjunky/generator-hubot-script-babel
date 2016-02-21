@@ -1,49 +1,29 @@
 'use strict';
 
-var Robot = require('hubot/src/robot');
-var TextMessage = require("hubot/src/message").TextMessage;
-var expect = require('chai').expect;
+let Helper = require('hubot-test-helper');
+let expect = require('chai').expect;
+let helper = new Helper('../src/index.js'); // path to file you want to test
 
-describe('hubot', function(){
+describe('hubot', () => {
 
-    var robot;
-    var user;
+	let room;
 
-    beforeEach(()=> {
+	beforeEach(() => room = helper.createRoom());
+	afterEach(() => room.destroy());
 
-        // create new robot, without http, using the mock adapter
-        robot = new Robot(null, 'mock-adapter', false, 'Hubot');
+	it('should respond when hearing talk of badgers', done => {
 
-        // configure user
-        user = robot.brain.userForId('1', {
-            name: 'mocha',
-            room: '#mocha'
-        });
+		room.user.say('alice', 'what exactly is a badger anyways').then(() =>{
 
-        robot.adapter.on('connected', () => {
+			expect(room.messages).to.eql([
+				['alice', 'what exactly is a badger anyways'],
+				['hubot', 'Badgers? BADGERS? WE DON\'T NEED NO STINKIN BADGERS!']
+			]);
 
-            // load the module under test and configure it for the
-            // robot.  This is in place of external-scripts
-            require('../src/index')(robot);
+			done();
 
-        });
+		});
 
-        robot.run();
-    });
-
-    afterEach(()=> {
-        robot.shutdown();
-    });
-
-    it('should send a message when hearing hello', (done) => {
-
-        robot.adapter.on('send', (envelope, strings) => {
-            expect(strings[0]).to.match(/it\'s working/);
-            done();
-        });
-
-       // Send a message to Hubot
-        robot.adapter.receive(new TextMessage(user, 'hello'));
-    });
+	});
 
 });
