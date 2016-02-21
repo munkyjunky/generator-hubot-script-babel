@@ -1,8 +1,10 @@
 'use strict';
 
-let Helper = require('hubot-test-helper');
-let expect = require('chai').expect;
-let helper = new Helper('../src/index.js'); // path to file you want to test
+const Helper = require('hubot-test-helper');
+const expect = require('chai').expect;
+const http = require('http');
+
+const helper = new Helper('../src/index.js'); // path to file you want to test
 
 describe('hubot', () => {
 
