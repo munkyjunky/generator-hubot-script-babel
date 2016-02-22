@@ -1,49 +1,66 @@
 'use strict';
 
-var Robot = require('hubot/src/robot');
-var TextMessage = require("hubot/src/message").TextMessage;
-var expect = require('chai').expect;
+const Helper = require('hubot-test-helper');
+const expect = require('chai').expect;
+const http = require('http');
 
-describe('hubot', function(){
+const helper = new Helper('../src/index.js'); // path to file you want to test
 
-    var robot;
-    var user;
+describe('hubot', () => {
 
-    beforeEach(()=> {
+	let room;
 
-        // create new robot, without http, using the mock adapter
-        robot = new Robot(null, 'mock-adapter', false, 'Hubot');
+	beforeEach(() => room = helper.createRoom());
+	afterEach(() => room.destroy());
 
-        // configure user
-        user = robot.brain.userForId('1', {
-            name: 'mocha',
-            room: '#mocha'
-        });
+	it('should respond when hearing talk of badgers', done => {
 
-        robot.adapter.on('connected', () => {
+		room.user.say('alice', 'what exactly is a badger anyways').then(() =>{
 
-            // load the module under test and configure it for the
-            // robot.  This is in place of external-scripts
-            require('../src/index')(robot);
+			expect(room.messages).to.eql([
+				['alice', 'what exactly is a badger anyways'],
+				['hubot', 'Badgers? BADGERS? WE DON\'T NEED NO STINKIN BADGERS!']
+			]);
 
-        });
+			done();
 
-        robot.run();
-    });
+		});
 
-    afterEach(()=> {
-        robot.shutdown();
-    });
+	});
 
-    it('should send a message when hearing hello', (done) => {
+	it('should respond when receiving a HTTP call', function (done) {
 
-        robot.adapter.on('send', (envelope, strings) => {
-            expect(strings[0]).to.match(/it\'s working/);
-            done();
-        });
+		const value = 'a random test value!';
 
-       // Send a message to Hubot
-        robot.adapter.receive(new TextMessage(user, 'hello'));
-    });
+		const options = {
+			hostname: 'localhost',
+			port: 8080,
+			path: '/test',
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		};
 
+		const req = http.request(options, (res) => {
+
+			expect(res.statusCode).to.equal(200);
+
+			expect(res.statusMessage).to.equal('OK');
+
+			expect(room.messages).to.eql([
+				['hubot', `Received HTTP request: ${value}`]
+			]);
+
+			done();
+
+		});
+
+		req.write(JSON.stringify({
+			value: value
+		}));
+
+		req.end();
+
+	});
 });
