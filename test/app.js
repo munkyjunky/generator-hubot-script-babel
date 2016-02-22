@@ -20,7 +20,6 @@ describe('generator-hubot-script-babel:app', function() {
 	it('creates files', function() {
 		assert.file([
 			'package.json',
-			'webpack.config.js',
 			'test/index.js',
 			'src/index.js',
 			'.gitignore',
