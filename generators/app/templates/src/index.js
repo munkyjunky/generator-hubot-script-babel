@@ -7,8 +7,8 @@ module.exports = (robot) => {
 	});
 
 	robot.router.post('/test', (req, res) => {
+		robot.send({ room: req.params.room }, `Received HTTP request: ${req.body.value}`);
 		res.send('OK');
-		robot.send('Received HTTP request');
 	});
 
 };
