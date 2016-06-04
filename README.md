@@ -18,7 +18,7 @@ yo hubot-script-babel
 ```
 
 ## Usage
-This is a generator for hubot scripts which are written in ES6 JavaScript, and packaged using webpack. It also provides a basic testing setup for your script, using the mocha, chai, and hubot mock adapter. 
+This is a generator for hubot scripts which are written in ES2015 JavaScript. It also provides a basic testing setup for your script, using the mocha, chai, and hubot mock adapter. 
 
 ```bash
 npm test # run tests
@@ -26,7 +26,7 @@ npm publish # publish your script, which will automatically run webpack
 npm run build # run webpack to test your code locally
 ```
 
-When using `npm publish` the included npm prepublish script and .npmignore will webpack your ES6 JavaScript, and exclude any build files from the published package.
+When using `npm publish` the included npm prepublish script and .npmignore will run your ES2015 JavaScript through babel, and exclude any build files from the published package.
 
 
 ## License
