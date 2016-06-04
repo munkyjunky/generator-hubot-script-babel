@@ -22,8 +22,7 @@ This is a generator for hubot scripts which are written in ES2015 JavaScript. It
 
 ```bash
 npm test # run tests
-npm publish # publish your script, which will automatically run webpack
-npm run build # run webpack to test your code locally
+npm run build # convert your ES2015 to ES5
 ```
 
 When using `npm publish` the included npm prepublish script and .npmignore will run your ES2015 JavaScript through babel, and exclude any build files from the published package.
