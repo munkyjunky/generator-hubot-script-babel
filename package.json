@@ -13,9 +13,9 @@
   "main": "generators\\index.js",
   "keywords": [
     "yeoman-generator",
-	"hubot",
-	"babel",
-	"es2015"
+    "hubot",
+    "babel",
+    "es2015"
   ],
   "dependencies": {
     "bluebird": "^3.0.6",
@@ -25,6 +25,7 @@
     "object-assign": "^4.0.1"
   },
   "devDependencies": {
+    "coffee-script": "^1.12.4",
     "coveralls": "^2.11.6",
     "eslint-config-degree53-core": "^1.0.6",
     "gulp": "^3.6.0",

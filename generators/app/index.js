@@ -67,6 +67,7 @@ module.exports = yeoman.generators.Base.extend({
 
 				self.copy('src/index.js', 'src/index.js');
 				self.copy('test/index.js', 'test/index.js');
+				self.copy('test/mocha.opts', 'test/mocha.opts');
 
 				try {
 					// Try copy the file if it exists, else catch the error silently

@@ -21,6 +21,7 @@ describe('generator-hubot-script-babel:app', function() {
 		assert.file([
 			'package.json',
 			'test/index.js',
+			'test/mocha.opts',
 			'src/index.js',
 			'.gitignore',
 			'.npmignore',
