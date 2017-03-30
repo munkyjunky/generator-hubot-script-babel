@@ -13,9 +13,9 @@
   "main": "generators\\index.js",
   "keywords": [
     "yeoman-generator",
-	"hubot",
-	"babel",
-	"es2015"
+    "hubot",
+    "babel",
+    "es2015"
   ],
   "dependencies": {
     "bluebird": "^3.0.6",
